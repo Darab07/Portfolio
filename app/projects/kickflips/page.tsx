@@ -172,13 +172,13 @@ export default function StonexisProject() {
       <div ref={contentCardRef} className="content-card relative z-20 bg-white min-h-screen py-16 md:py-24 text-xl md:text-2xl">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="pl-6 md:pl-12">
-            <h1 ref={headingRef} className="text-4xl lg:text-6xl font-light text-black mb-1">
+            <h1 ref={headingRef} className="text-4xl lg:text-4xl font-light text-black mb-1">
               KickFlips
             </h1>
           </div>
 
           <div className="space-y-4 px-6 md:px-12 pb-2 md:pb-0">
-            <p className="text-sm md:text-2xl text-gray-600 leading-relaxed text-left">
+            <p className="text-sm md:text-lg text-gray-600 leading-relaxed text-left">
             I designed a modern, responsive website concept for KickFlips, a sneaker brand built for the next generation of streetwear culture.
             The project focused on creating a bold digital presence with an intuitive user experience, strong visual hierarchy, and a brand identity that feels fresh and authentic.
             The design emphasizes responsive layouts, product-first storytelling, and interactive elements that highlight the energy of sneaker culture while reinforcing KickFlips’ position as a rising lifestyle brand.
@@ -225,7 +225,7 @@ export default function StonexisProject() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 min-h-screen">
             <div className="lg:sticky lg:top-8 lg:h-fit pt-8 md:pt-32 pb-8 md:pb-16 pl-6 md:pl-6">
-              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-2xl">
+              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-lg">
                 <span className="md:hidden">The website was designed with a bold and intuitive layout that lets visitors easily browse sneakers, explore upcoming releases, and experience the brand’s energy in a seamless way.</span>
                 <span className="hidden md:block">
                 The website was designed with a bold and intuitive layout that lets visitors easily browse sneakers, explore upcoming releases, and experience the brand’s energy in a seamless way.
@@ -260,21 +260,21 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="w-full px-6 md:px-12 py-12 md:py-24 text-xl md:text-2xl">
           <div className="max-w-2xl pl-0 md:pl-12 fade-up">
-            <h3 className="text-lg md:text-2xl font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
+            <h3 className="text-lg md:text-lg font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
               SERVICES
             </h3>
 
             <div className="space-y-2">
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Website Strategy, Consulting</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Website Strategy, Consulting</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">UX/UI, Web Design</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">UX/UI, Web Design</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Brand Identity</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Brand Identity</h4>
               </div>
             </div>
           </div>
@@ -298,7 +298,7 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24 text-xl md:text-5xl">
           <div className="w-full fade-up">
-            <h2 className="text-lg md:text-5xl lg:text-7xl font-light text-black leading-tight text-left">
+            <h2 className="text-lg md:text-3xl lg:text-5xl font-light text-black leading-tight text-left">
               <span className="md:hidden">The project was crafted to elevate KickFlips’ digital identity and build a strong presence in sneaker culture. It delivers an immersive, engaging experience for visitors, reinforcing the brand’s position as a bold lifestyle leader.</span>
               <span className="hidden md:block">
               The project was crafted to elevate KickFlips’ digital
@@ -357,8 +357,8 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24">
           <div className="w-full">
-            <h2 className="text-xl lg:text-6xl font-light text-black leading-tight text-left">
-              <span className="lg:hidden">The platform enables visitors to seamlessly browse sneaker collections, discover limited-edition drops, and customize their choices—while reinforcing KickFlips’ reputation for creativity and innovation in streetwear culture.</span>
+            <h2 className="text-xl lg:text-4xl font-light text-black leading-tight text-left">
+              <span className="lg:hidden">The platform enables visitors to seamlessly browse sneaker collections, discover limited-edition drops, and customize their choices—while reinforcing KickFlips' reputation for creativity and innovation in streetwear culture.</span>
               <span className="hidden lg:block">
               The platform enables visitors to seamlessly browse
                 <br />
@@ -438,14 +438,14 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/kickflips/Phone Mockup.png"
+                  src="/images/kickflips/Phone Mockup.jpg"
                   alt="Stonexis mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/kickflips/Card Mockup.png"
+                  src="/images/kickflips/Card Mockup.jpg"
                   alt="Stonexis cards showing project portfolio"
                   className="w-full h-full object-cover"
                 />
@@ -461,9 +461,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Discovery</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">4 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Discovery</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">4 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I researched sneaker culture, competitor brands, and audience expectations to understand trends and user 
                   behavior. From these insights, I identified opportunities to create a bold, engaging experience and 
                   sketched early concepts for layouts and interactions.
@@ -474,9 +474,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Design</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">9 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Design</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">9 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I created high-fidelity wireframes and responsive layouts in Figma, focusing on product-first storytelling 
                   and a clean hierarchy. A component-based design system ensured consistency across pages, from product 
                   displays to limited drop announcements.
@@ -487,9 +487,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Branding & Visual Identity</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">6 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Branding & Visual Identity</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">6 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I developed supporting brand assets, including sneaker card mockups and bold visual identity elements. 
                   By refining typography, color palette, and iconography, I built a design language that reflects 
                   KickFlips' authenticity and energy.
@@ -527,7 +527,7 @@ export default function StonexisProject() {
         <div className="w-full px-6 md:px-12">
           {/* Full-width heading and divider */}
           <div className="max-w-4xl">
-              <h2 className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+              <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                 <span className="block md:hidden">
                   Take the next step
                   <br />
@@ -552,7 +552,7 @@ export default function StonexisProject() {
           {/* Two cards in the same row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-              <p className="text-black text-lg leading-relaxed mb-[60px]">
+              <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                   Book a time for a short call to discuss the possibilities of working together.
                 </p>
 
@@ -566,7 +566,7 @@ export default function StonexisProject() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                     </div>
                   </div>
 
@@ -584,7 +584,7 @@ export default function StonexisProject() {
             </div>
 
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -599,8 +599,8 @@ export default function StonexisProject() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
-                      <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                      <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                   </div>
                 </div>
               </div>

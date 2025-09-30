@@ -134,7 +134,7 @@ export default function Work() {
         {/* Work Title Section */}
         <section className="px-6 md:px-12 py-8 md:py-32 max-w-full overflow-x-hidden">
           <div className="text-center">
-            <h1 ref={workTitleRef} className="text-6xl md:text-9xl font-light text-black mb-8 md:mb-16 tracking-[-0.075em]">
+            <h1 ref={workTitleRef} className="text-6xl md:text-7xl font-light text-black mb-8 md:mb-16 tracking-[-0.075em]">
               Work
             </h1>
           </div>
@@ -148,7 +148,7 @@ export default function Work() {
                 <button
                   key={filter.id}
                   onClick={() => setActiveFilter(filter.id)}
-                  className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all duration-300 ${
+                  className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                     activeFilter === filter.id
                       ? 'bg-black text-white'
                       : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -178,7 +178,7 @@ export default function Work() {
                   className="object-cover"
                 />
                 <div className="absolute top-6 left-6">
-                  <h3 className="font-light text-white text-4xl">
+                  <h3 className="font-light text-white text-4xl md:text-2xl">
                     {project.title}
                   </h3>
                 </div>
@@ -186,7 +186,7 @@ export default function Work() {
                   {project.tags.map((tag, index) => (
                     <button 
                       key={index}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      className={`px-4 py-2 rounded-full text-sm md:text-xs font-medium transition-colors ${
                         index === 0 
                           ? 'bg-black/80 text-white hover:bg-black/90' 
                           : 'bg-white/20 text-white border border-white/30 hover:bg-white/30'
@@ -217,7 +217,7 @@ export default function Work() {
           <div className="w-full px-6 md:px-12">
             {/* Full-width heading and divider */}
             <div className="max-w-4xl">
-                <h2 className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+                <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                   <span className="block md:hidden">
                     Take the next step
                     <br />
@@ -242,7 +242,7 @@ export default function Work() {
             {/* Two cards in the same row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
               <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-black text-lg leading-relaxed mb-[60px]">
+                <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                     Book a time for a short call to discuss the possibilities of working together.
                   </p>
 
@@ -256,7 +256,7 @@ export default function Work() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-medium text-black">M. Darab Khan</h4>
+                        <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                       </div>
                     </div>
 
@@ -266,7 +266,7 @@ export default function Work() {
                         e.preventDefault();
                         openCalendly();
                       }}
-                      className="bg-white hover:bg-gray-50 text-black px-6 py-2 rounded-full text-base font-medium border border-gray-200 shadow-sm inline-block cursor-pointer w-full md:w-auto text-center"
+                      className="bg-white hover:bg-gray-50 text-black px-6 py-2 rounded-full text-base md:text-sm font-medium border border-gray-200 shadow-sm inline-block cursor-pointer w-full md:w-auto text-center"
                     >
                       Book a meeting
                     </a>
@@ -274,7 +274,7 @@ export default function Work() {
               </div>
 
               <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                  <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                  <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -289,8 +289,8 @@ export default function Work() {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-medium text-black">M. Darab Khan</h4>
-                        <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                        <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                        <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                     </div>
                   </div>
                 </div>

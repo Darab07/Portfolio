@@ -172,13 +172,13 @@ export default function StonexisProject() {
       <div ref={contentCardRef} className="content-card relative z-20 bg-white min-h-screen py-16 md:py-24 text-xl md:text-2xl">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="pl-6 md:pl-12">
-            <h1 ref={headingRef} className="text-4xl lg:text-6xl font-light text-black mb-1">
+            <h1 ref={headingRef} className="text-4xl lg:text-4xl font-light text-black mb-1">
               Aurelia Hotel
             </h1>
           </div>
 
           <div className="space-y-4 px-6 md:px-12 pb-2 md:pb-0">
-            <p className="text-sm md:text-2xl text-gray-600 leading-relaxed text-left">
+            <p className="text-sm md:text-lg text-gray-600 leading-relaxed text-left">
             The Aurelia Hotel project was a multi-faceted endeavor involving web design, development, CMS integration, and hotel booking system implementation. Known for its refined hospitality and modern elegance, Aurelia stands as a destination that blends comfort with sophistication.
             My challenge was to design a website that not only highlighted the hotel’s accommodations, dining, and leisure spaces but also preserved the essence of Aurelia’s brand—elevating its identity while ensuring a seamless digital experience for guests.
             </p>
@@ -224,7 +224,7 @@ export default function StonexisProject() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 min-h-screen">
             <div className="lg:sticky lg:top-8 lg:h-fit pt-8 md:pt-32 pb-8 md:pb-16 pl-6 md:pl-6">
-              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-2xl">
+              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-lg">
                 <span className="md:hidden">My web design emphasized a refined, user-friendly layout to make it effortless for visitors to explore Aurelia Hotel’s rooms, dining experiences, and amenities, while reflecting the elegance and warmth of the brand.</span>
                 <span className="hidden md:block">
                 My web design emphasized a refined, user-friendly layout to make it effortless for visitors to explore Aurelia Hotel’s rooms, dining experiences, and amenities, while reflecting the elegance and warmth of the brand.
@@ -259,21 +259,21 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="w-full px-6 md:px-12 py-12 md:py-24 text-xl md:text-2xl">
           <div className="max-w-2xl pl-0 md:pl-12 fade-up">
-            <h3 className="text-lg md:text-2xl font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
+            <h3 className="text-lg md:text-lg font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
               SERVICES
             </h3>
 
             <div className="space-y-2">
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Website Strategy, Consulting</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Website Strategy, Consulting</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">UX/UI, Web Design</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">UX/UI, Web Design</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Brand Identity</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Brand Identity</h4>
               </div>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24 text-xl md:text-5xl">
           <div className="w-full fade-up">
-            <h2 className="text-lg md:text-5xl lg:text-7xl font-light text-black leading-tight text-left">
+            <h2 className="text-lg md:text-3xl lg:text-5xl font-light text-black leading-tight text-left">
               <span className="md:hidden">
                 The project was crafted to elevate Aurelia Hotel’s digital presence by strengthening its brand identity on mobile. The design delivers a seamless and elegant browsing experience, making it effortless for guests to explore rooms, dining, and amenities while reflecting the hotel’s sophistication.</span>
               <span className="hidden md:block">
@@ -351,8 +351,8 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24">
           <div className="w-full">
-            <h2 className="text-xl lg:text-6xl font-light text-black leading-tight text-left">
-              <span className="lg:hidden">The platform enables guests to easily explore room options, dining experiences, and amenities, while reinforcing Aurelia Hotel’s reputation for elegance, comfort, and modern hospitality.</span>
+            <h2 className="text-xl lg:text-4xl font-light text-black leading-tight text-left">
+              <span className="lg:hidden">The platform enables guests to easily explore room options, dining experiences, and amenities, while reinforcing Aurelia Hotel's reputation for elegance, comfort, and modern hospitality.</span>
               <span className="hidden lg:block">
               The platform enables guests to easily explore
                 <br />
@@ -432,14 +432,14 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/aurelia/Phone Mockup.png"
+                  src="/images/aurelia/Phone Mockup.jpg"
                   alt="Stonexis mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/aurelia/Card Mockup.png"
+                  src="/images/aurelia/Card Mockup.jpg"
                   alt="Stonexis cards showing project portfolio"
                   className="w-full h-full object-cover"
                 />
@@ -455,9 +455,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Discovery</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">5 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Discovery</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">5 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   Researched the hospitality industry and studied competitor hotels to understand their digital presence. 
                   Identified gaps in user experience and opportunities to reflect Aurelia Hotel's values online. Generated 
                   ideas through brainstorming and early sketches of layouts.
@@ -468,9 +468,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Design</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">14 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Design</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">14 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   Created high-fidelity wireframes and responsive layouts in Figma. Focused on an elegant, user-friendly 
                   interface that aligned with Aurelia Hotel's brand. Built a flexible design system to ensure consistency 
                   across pages and devices.
@@ -481,9 +481,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Branding & Visual Identity</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">8 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Branding & Visual Identity</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">8 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   Developed visual identity assets to strengthen Aurelia's digital presence, including refined typography, 
                   a warm color palette, and iconography. Designed supporting mockups that highlighted the hotel's elegance 
                   while ensuring a cohesive brand language.
@@ -521,7 +521,7 @@ export default function StonexisProject() {
         <div className="w-full px-6 md:px-12">
           {/* Full-width heading and divider */}
           <div className="max-w-4xl">
-              <h2 className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+              <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                 <span className="block md:hidden">
                   Take the next step
                   <br />
@@ -546,7 +546,7 @@ export default function StonexisProject() {
           {/* Two cards in the same row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-              <p className="text-black text-lg leading-relaxed mb-[60px]">
+              <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                   Book a time for a short call to discuss the possibilities of working together.
                 </p>
 
@@ -560,7 +560,7 @@ export default function StonexisProject() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                     </div>
                   </div>
 
@@ -578,7 +578,7 @@ export default function StonexisProject() {
             </div>
 
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -593,8 +593,8 @@ export default function StonexisProject() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
-                      <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                      <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                   </div>
                 </div>
               </div>

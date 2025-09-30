@@ -172,13 +172,13 @@ export default function StonexisProject() {
       <div ref={contentCardRef} className="content-card relative z-20 bg-white min-h-screen py-16 md:py-24 text-xl md:text-2xl">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="pl-6 md:pl-12">
-            <h1 ref={headingRef} className="text-4xl lg:text-6xl font-light text-black mb-1">
+            <h1 ref={headingRef} className="text-4xl lg:text-4xl font-light text-black mb-1">
               Nexora
             </h1>
           </div>
 
           <div className="space-y-4 px-6 md:px-12 pb-2 md:pb-0">
-            <p className="text-sm md:text-2xl text-gray-600 leading-relaxed text-left">
+            <p className="text-sm md:text-lg text-gray-600 leading-relaxed text-left">
             I designed a modern, responsive website concept for Nexora, a digital platform built to showcase knowledge, research, and industry insights. The project focused on creating an intuitive user experience, a clear visual hierarchy, and a cohesive brand identity. The design emphasizes responsive layouts, streamlined content organization, and interaction patterns that position Nexora as a trusted hub for innovation and information.
             </p>
 
@@ -223,7 +223,7 @@ export default function StonexisProject() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 min-h-screen">
             <div className="lg:sticky lg:top-8 lg:h-fit pt-8 md:pt-32 pb-8 md:pb-16 pl-6 md:pl-6">
-              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-2xl">
+              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-lg">
                 <span className="md:hidden">The goal was to design a professional, easy-to-navigate platform that highlights journals, articles, and conferences. It needed to handle large volumes of content while maintaining clarity and flow, guiding diverse users seamlessly through complex information structures with an intuitive experience.</span>
                 <span className="hidden md:block">
                 The goal was to design a professional, easy-to-navigate platform that highlights journals, articles, and conferences. It needed to handle large volumes of content while maintaining clarity and flow, guiding diverse users seamlessly through complex information structures with an intuitive experience.
@@ -258,21 +258,21 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="w-full px-6 md:px-12 py-12 md:py-24 text-xl md:text-2xl">
           <div className="max-w-2xl pl-0 md:pl-12 fade-up">
-            <h3 className="text-lg md:text-2xl font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
+            <h3 className="text-lg md:text-lg font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
               SERVICES
             </h3>
 
             <div className="space-y-2">
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Website Strategy, Consulting</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Website Strategy, Consulting</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">UX/UI, Web Design</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">UX/UI, Web Design</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Brand Identity</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Brand Identity</h4>
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24 text-xl md:text-5xl">
           <div className="w-full fade-up">
-            <h2 className="text-lg md:text-5xl lg:text-7xl font-light text-black leading-tight text-left">
+            <h2 className="text-lg md:text-3xl lg:text-5xl font-light text-black leading-tight text-left">
               <span className="md:hidden">The new website provides seamless access to journals, articles, and conference details. Structured pathways guide users through submission, discovery, and exploration.</span>
               <span className="hidden md:block">
               The new website provides seamless access
@@ -355,7 +355,7 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24">
           <div className="w-full">
-            <h2 className="text-xl lg:text-6xl font-light text-black leading-tight text-left">
+            <h2 className="text-xl lg:text-4xl font-light text-black leading-tight text-left">
               <span className="lg:hidden">I designed a fully integrated platform that improves the experience for both researchers and administrators, making it easier to publish, manage, and access large volumes of content.</span>
               <span className="hidden lg:block">
               I designed a fully integrated platform
@@ -511,7 +511,7 @@ export default function StonexisProject() {
         <div className="w-full px-6 md:px-12">
           {/* Full-width heading and divider */}
           <div className="max-w-4xl">
-              <h2 className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+              <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                 <span className="block md:hidden">
                   Take the next step
                   <br />
@@ -536,7 +536,7 @@ export default function StonexisProject() {
           {/* Two cards in the same row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-              <p className="text-black text-lg leading-relaxed mb-[60px]">
+              <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                   Book a time for a short call to discuss the possibilities of working together.
                 </p>
 
@@ -550,7 +550,7 @@ export default function StonexisProject() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                     </div>
                   </div>
 
@@ -568,7 +568,7 @@ export default function StonexisProject() {
             </div>
 
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -583,8 +583,8 @@ export default function StonexisProject() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
-                      <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                      <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                   </div>
                 </div>
               </div>

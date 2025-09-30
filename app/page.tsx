@@ -97,6 +97,11 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
+    // Ensure video autoplay
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error)
+    }
+
     if (headlineRef.current) {
       gsap.fromTo(
         headlineRef.current,
@@ -316,12 +321,12 @@ export default function Home() {
         {/* Centered Hero Text */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white max-w-4xl px-12">
-            <h1 ref={headlineRef} className="text-3xl md:text-6xl font-light leading-tight mb-12 tracking-[-0.075em]">
+            <h1 ref={headlineRef} className="text-3xl md:text-4xl font-light leading-tight mb-12 tracking-[-0.075em]">
             <span className="inline-block">Branding and web design,</span>
             <br />
             <span className="inline-block">driven by strategy & innovation.</span>
           </h1>
-            <p className="text-lg md:text-xl font-light mb-8 text-gray-200">
+            <p className="text-lg md:text-lg font-light mb-8 text-gray-200">
               Mohammad Darab Khan
             </p>
             <div className="flex justify-center">
@@ -331,7 +336,7 @@ export default function Home() {
                   e.preventDefault();
                   openCalendly();
                 }}
-                className="bg-white hover:bg-gray-100 text-black px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg font-medium transition-all duration-300 cursor-pointer"
+                className="bg-white hover:bg-gray-100 text-black px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-base font-medium transition-all duration-300 cursor-pointer"
               >
                 Book a meeting
               </a>
@@ -343,7 +348,23 @@ export default function Home() {
       <main className="relative z-10 mt-[100vh] px-6 md:px-12 py-16 md:py-32 bg-white max-w-full overflow-x-hidden">
       </main>
 
-      <section className="relative z-0 px-6 md:px-12 bg-white pb-[120px] pt-8 md:pt-32 max-w-full overflow-x-hidden">
+      <section className="relative z-20 px-6 md:px-12 bg-white pb-[120px] -mt-8 md:-mt-30 max-w-full overflow-x-hidden">
+        {/* Project Cards Title */}
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black mb-4">
+            <span className="block md:hidden">
+            Showcasing Work
+              <br />
+              That Tells a Story
+            </span>
+            <span className="hidden md:block">
+              Showcasing Work
+              <br />
+              That Tells a Story
+            </span>
+          </h2>
+        </div>
+        
         <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
             className="relative bg-gray-200 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
@@ -358,7 +379,7 @@ export default function Home() {
               priority
             />
             <div className="absolute top-6 left-6">
-              <h3 ref={koderusHeadingRef} className="font-light text-white text-4xl">
+              <h3 ref={koderusHeadingRef} className="font-light text-white text-4xl md:text-2xl">
                 Stonexis
               </h3>
             </div>
@@ -373,7 +394,7 @@ export default function Home() {
             <div className="preview-overlay absolute top-8 left-8 right-8 bottom-8 opacity-0 scale-75 pointer-events-none flex items-center justify-center">
               <div className="relative w-full max-w-4xl aspect-[2000/1192]">
                 <Image
-                  src="/images/stonexis/Phone Mockup High.png"
+                  src="/images/stonexis/Phone Mockup.jpg"
                   alt="Stonexis Homepage Preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -388,14 +409,14 @@ export default function Home() {
             onClick={() => router.push("/projects/aurelia")}
           >
             <Image
-              src="/images/aurelia/Laptop.png"
+              src="/images/aurelia/Laptop.jpg"
               alt="Aurelia Hotel project showcase"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute top-6 left-6">
-              <h3 ref={wideWingsHeadingRef} className="font-light text-white text-4xl">
+              <h3 ref={wideWingsHeadingRef} className="font-light text-white text-4xl md:text-2xl">
                 Aurelia Hotel{" "}
               </h3>
             </div>
@@ -410,7 +431,7 @@ export default function Home() {
             <div className="preview-overlay absolute top-8 left-8 right-8 bottom-8 opacity-0 scale-75 pointer-events-none flex items-center justify-center">
               <div className="relative w-full max-w-4xl aspect-[2000/1192]">
                 <Image
-                  src="/images/aurelia/Phone Mockup.png"
+                  src="/images/aurelia/Iphone Pockup.jpg"
                   alt="Aurelia Hotel Preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -425,14 +446,14 @@ export default function Home() {
             onClick={() => router.push("/projects/nexora")}
           >
             <Image
-              src="/images/nexora/Laptop Mockup.png"
+              src="/images/nexora/Laptop Mockup.jpg"
               alt="Nexora project showcase"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute top-6 left-6">
-              <h3 ref={extricaHeadingRef} className="font-light text-white text-4xl">
+              <h3 ref={extricaHeadingRef} className="font-light text-white text-4xl md:text-2xl">
                 Nexora
               </h3>
             </div>
@@ -447,7 +468,7 @@ export default function Home() {
             <div className="preview-overlay absolute top-8 left-8 right-8 bottom-8 opacity-0 scale-75 pointer-events-none flex items-center justify-center">
               <div className="relative w-full max-w-4xl aspect-[2000/1192]">
                 <Image
-                  src="/images/nexora/Iphone Mockup.png"
+                  src="/images/nexora/Iphone Mockup.jpg"
                   alt="Nexora Preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -469,7 +490,7 @@ export default function Home() {
               className="object-cover"
             />
             <div className="absolute top-6 left-6">
-              <h3 ref={aznHeadingRef} className="font-light text-white text-4xl">
+              <h3 ref={aznHeadingRef} className="font-light text-white text-4xl md:text-2xl">
                 LZA Architecture{" "}
               </h3>
             </div>
@@ -484,7 +505,7 @@ export default function Home() {
             <div className="preview-overlay absolute top-8 left-8 right-8 bottom-8 opacity-0 scale-75 pointer-events-none flex items-center justify-center">
               <div className="relative w-full max-w-4xl aspect-[2000/1192]">
                 <Image
-                  src="/images/lza/Mobile Mockup.png"
+                  src="/images/lza/Mobile Mockup.jpg"
                   alt="LZA Architecture Preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -499,14 +520,14 @@ export default function Home() {
             onClick={() => router.push("/projects/kickflips")}
           >
             <Image
-              src="/images/kickflips/Laptop Mockup.png"
+              src="/images/kickflips/Laptop Mockup.jpg"
               alt="KickFlips project showcase"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute top-6 left-6">
-              <h3 ref={oliverCabellHeadingRef} className="font-light text-white text-4xl">
+              <h3 ref={oliverCabellHeadingRef} className="font-light text-white text-4xl md:text-2xl">
                 KickFlips{" "}
               </h3>
             </div>
@@ -521,7 +542,7 @@ export default function Home() {
             <div className="preview-overlay absolute top-8 left-8 right-8 bottom-8 opacity-0 scale-75 pointer-events-none flex items-center justify-center">
               <div className="relative w-full max-w-4xl aspect-[2000/1192]">
                 <Image
-                  src="/images/kickflips/Phone Mockup.png"
+                  src="/images/kickflips/Phone Mockup.jpg"
                   alt="KickFlips Preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -535,7 +556,7 @@ export default function Home() {
 
       <section className="relative z-10 w-full bg-white pb-20 max-w-full overflow-x-hidden">
         <div className="w-full px-6 md:px-12">
-          <h2 ref={foundationRef} className="font-light leading-tight tracking-[-0.075em] text-black mb-16 text-4xl md:text-7xl">
+          <h2 ref={foundationRef} className="font-light leading-tight tracking-[-0.075em] text-black mb-16 text-4xl md:text-5xl">
             <span className="block md:hidden">
               Setting the
               <br />
@@ -555,8 +576,8 @@ export default function Home() {
             {/* Step 01 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">01.</div>
-              <h3 className="text-2xl font-light text-black mb-6">Brief me</h3>
-              <p className="text-gray-600 text-base leading-relaxed mb-8">
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Brief me</h3>
+              <p className="text-gray-600 text-base md:text-sm leading-relaxed mb-8">
                 Provide your project details for me to better align my web design, development, and brand identity
                 design services with your needs.
               </p>
@@ -570,8 +591,8 @@ export default function Home() {
             {/* Step 02 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">02.</div>
-              <h3 className="text-2xl font-light text-black mb-6">Meet me online</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Meet me online</h3>
+              <p className="text-gray-600 text-base md:text-sm leading-relaxed">
                 Share your project information so I can accurately adjust my web design and development services to
                 suit your requirements.
               </p>
@@ -580,8 +601,8 @@ export default function Home() {
             {/* Step 03 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">03.</div>
-              <h3 className="text-2xl font-light text-black mb-6">Free estimation</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Free estimation</h3>
+              <p className="text-gray-600 text-base md:text-sm leading-relaxed">
                 Receive a detailed estimate from me, designed to provide a clear overview of the costs tailored to your   
                 project's unique requirements.
               </p>
@@ -590,8 +611,8 @@ export default function Home() {
             {/* Step 04 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">04.</div>
-              <h3 className="text-2xl font-light text-black mb-6">Work together</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Work together</h3>
+              <p className="text-gray-600 text-base md:text-sm leading-relaxed">
                 Collaborate closely with me to efficiently and effectively turn your project vision into reality,
                 ensuring comprehensive success.
               </p>
@@ -683,7 +704,7 @@ export default function Home() {
       <section className="relative z-10 w-full bg-black py-32 max-w-full overflow-x-hidden">
         <div className="w-full px-6 md:px-12">
           <div className="max-w-6xl">
-            <h2 ref={servicesRef} className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-white">
+            <h2 ref={servicesRef} className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-white">
               <span className="block md:hidden">
                 My services range from designing visual identities to creating websites. This positions me uniquely between design and technology.
               </span>
@@ -703,7 +724,7 @@ export default function Home() {
         <div className="pt-20 pb-8">
           <h2
             ref={pakistanHeadlineRef}
-            className="text-4xl md:text-6xl font-light leading-tight text-black mb-6 tracking-[-0.075em] px-6 md:px-10"
+            className="text-4xl md:text-4xl font-light leading-tight text-black mb-6 tracking-[-0.075em] px-6 md:px-10"
           >
             <span className="block md:hidden">
               Based in Pakistan,
@@ -743,35 +764,39 @@ export default function Home() {
         
       </section>
 
-      <section className="relative z-10 w-full bg-black py-8 md:py-32 max-w-full overflow-x-hidden">
+      <section className="relative z-10 w-full bg-black py-8 md:py-16 max-w-full overflow-x-hidden">
         <div className="w-full px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+          <div className="flex flex-col md:flex-row gap-16">
             {/* Left side - Title */}
-            <div className="sticky top-24 self-start">
-              <h2 ref={visualIdentityRef} className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-white">
-                <span className="block md:hidden">
-                  Visual identity design
-                </span>
-                <span className="hidden md:block">
+            <div className="md:w-1/2">
+              <div className="md:sticky md:top-24 mt-8 md:-mt-8">
+                <h2 ref={visualIdentityRef} className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-white">
+                  <span className="block md:hidden">
                   Visual identity
-                  <br />
-                  design
-                </span>
-              </h2>
+                    <br />
+                    design
+                  </span>
+                  <span className="hidden md:block">
+                    Visual identity
+                    <br />
+                    design
+                  </span>
+                </h2>
+              </div>
             </div>
 
             {/* Right side - Description paragraphs */}
-            <div className="space-y-8 mt-12 md:mt-24">
-              <p className="text-white text-lg leading-relaxed">
+            <div className="md:w-1/2 space-y-8 mt-12 md:mt-8">
+              <p className="text-white text-lg md:text-base leading-relaxed">
                 Gain a competitive edge, enhance your brand perception, and achieve brand clarity.
               </p>
 
-              <p className="text-lg leading-relaxed text-gray-500">
+              <p className="text-lg md:text-base leading-relaxed text-gray-500">
                 Your identity drives change, increases the value of your company, and contributes to your organization
                 to move faster and more efficiently.
               </p>
 
-              <p className="text-lg leading-relaxed text-gray-500">
+              <p className="text-lg md:text-base leading-relaxed text-gray-500">
                 A professional corporate identity attracts the attention of potential customers and makes your business
                 a preferred choice. A well-defined and consistent brand conveys professionalism, and positively impacts
                 customer loyalty and influences premium-brand perception.
@@ -779,7 +804,7 @@ export default function Home() {
 
               <div className="mt-12">
                 <img
-                  src="/images/nexora/Card Mockup.png"
+                  src="/images/nexora/Card Mockup.jpg"
                   alt="Nexora card mockup - visual identity design showcase"
                   className="w-full rounded-lg"
                 />
@@ -789,16 +814,16 @@ export default function Home() {
                 <h3 className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-8">SERVICES</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 leading-5 py-0">
                   <div className="space-y-4">
-                    <p className="text-white text-lg leading-4">Visual identity design</p>
-                    <p className="text-white text-lg leading-4">Logo design</p>
-                    <p className="text-white text-lg leading-4">Brand strategy</p>
-                    <p className="text-white text-lg leading-4">Market research</p>
+                    <p className="text-white text-lg md:text-base leading-4">Visual identity design</p>
+                    <p className="text-white text-lg md:text-base leading-4">Logo design</p>
+                    <p className="text-white text-lg md:text-base leading-4">Brand strategy</p>
+                    <p className="text-white text-lg md:text-base leading-4">Market research</p>
                   </div>
                   <div className="space-y-4">
-                    <p className="text-white text-lg leading-4">UX audit</p>
-                    <p className="text-white text-lg leading-4">Information architecture</p>
-                    <p className="text-white text-lg leading-4">Comparative analysis</p>
-                    <p className="text-white text-lg leading-4">Brand messaging</p>
+                    <p className="text-white text-lg md:text-base leading-4">UX audit</p>
+                    <p className="text-white text-lg md:text-base leading-4">Information architecture</p>
+                    <p className="text-white text-lg md:text-base leading-4">Comparative analysis</p>
+                    <p className="text-white text-lg md:text-base leading-4">Brand messaging</p>
                   </div>
                 </div>
               </div>
@@ -807,29 +832,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 w-full bg-white py-16 md:py-32 max-w-full overflow-x-hidden">
+      <section className="relative z-10 w-full bg-white py-16 md:py-20 max-w-full overflow-x-hidden">
         <div className="w-full px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="flex flex-col md:flex-row gap-16">
             {/* Left side - Title */}
-            <div className="sticky top-24 self-start">
-              <h2 ref={websiteDesignRef} className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
-                <span className="block md:hidden">
-                  Website design & development
-                </span>
-                <span className="hidden md:block">
-                  Website design
-                  <br />& development
-                </span>
-              </h2>
+            <div className="md:w-1/2">
+              <div className="md:sticky md:top-24 -mt-4 md:-mt-8">
+                <h2 ref={websiteDesignRef} className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
+                  <span className="block md:hidden">
+                    Website design & development
+                  </span>
+                  <span className="hidden md:block">
+                    Website design
+                    <br />& development
+                  </span>
+                </h2>
+              </div>
             </div>
 
             {/* Right side - Description paragraphs */}
-            <div className="space-y-8 mt-12 md:mt-24">
-              <p className="text-black text-lg leading-relaxed">
+            <div className="md:w-1/2 space-y-8 mt-12 md:mt-8">
+              <p className="text-black text-lg md:text-base leading-relaxed">
                 Generate leads & engagement, showcase expertise and credability, and stand out & differentiate.
               </p>
 
-              <p className="text-lg leading-relaxed text-gray-500">
+              <p className="text-lg md:text-base leading-relaxed text-gray-500">
                 Your website should enable easy access to inform, maintain trustworthiness and move buyers towards the
                 sale. A high-quality website can help you engage with your visitors, encouraging them to learn more
                 about your business and take action. A modern and beautiful digital presence can be a clear
@@ -838,7 +865,7 @@ export default function Home() {
 
               <div className="mt-12">
                 <img
-                  src="/images/nexora/Iphone Mockup.png"
+                  src="/images/nexora/Iphone Mockup.jpg"
                   alt="Nexora website displayed on mobile phone showing clean, minimal design"
                   className="w-full rounded-lg"
                 />
@@ -848,16 +875,16 @@ export default function Home() {
                 <h3 className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-8">SERVICES</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 leading-5 py-0">
                   <div className="space-y-4">
-                    <p className="text-black text-lg leading-4">Marketing websites</p>
-                    <p className="text-black text-lg leading-4">UX/UI design</p>
-                    <p className="text-black text-lg leading-4">Digital products</p>
-                    <p className="text-black text-lg leading-4">Mobile apps</p>
+                    <p className="text-black text-lg md:text-base leading-4">Marketing websites</p>
+                    <p className="text-black text-lg md:text-base leading-4">UX/UI design</p>
+                    <p className="text-black text-lg md:text-base leading-4">Digital products</p>
+                    <p className="text-black text-lg md:text-base leading-4">Mobile apps</p>
                   </div>
                   <div className="space-y-4">
-                    <p className="text-black text-lg leading-4">Prototyping & testing</p>
-                    <p className="text-black text-lg leading-4">Illustrations</p>
-                    <p className="text-black text-lg leading-4">Mobile apps</p>
-                    <p className="text-black text-lg leading-4">Animations & interactions</p>
+                    <p className="text-black text-lg md:text-base leading-4">Prototyping & testing</p>
+                    <p className="text-black text-lg md:text-base leading-4">Illustrations</p>
+                    <p className="text-black text-lg md:text-base leading-4">Mobile apps</p>
+                    <p className="text-black text-lg md:text-base leading-4">Animations & interactions</p>
                   </div>
                 </div>
               </div>
@@ -870,7 +897,7 @@ export default function Home() {
         <div className="w-full px-6 md:px-12">
           {/* Full-width heading and divider */}
           <div className="max-w-4xl">
-              <h2 ref={takeNextStepRef} className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+              <h2 ref={takeNextStepRef} className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                 <span className="block md:hidden">
                   Take the next step
                   <br />
@@ -895,7 +922,7 @@ export default function Home() {
           {/* Two cards in the same row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-              <p className="text-black text-lg leading-relaxed mb-[60px]">
+              <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                   Book a time for a short call to discuss the possibilities of working together.
                 </p>
 
@@ -909,7 +936,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                     </div>
                   </div>
 
@@ -927,7 +954,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -942,8 +969,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
-                      <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                      <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                   </div>
                 </div>
               </div>

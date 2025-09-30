@@ -117,7 +117,7 @@ export default function Header({}: HeaderProps) {
           className="flex flex-col font-newhouse cursor-pointer hover:opacity-80 transition-all duration-300 text-white"
           onClick={handleNameClick}
         >
-          <div className="font-light tracking-tight text-xl md:text-2xl">Darab Khan</div>
+          <div className="font-light tracking-tight text-xl md:text-lg">Darab Khan</div>
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
@@ -127,7 +127,7 @@ export default function Header({}: HeaderProps) {
               href="/work" 
               onMouseEnter={() => setHoveredItem('work')}
               onMouseLeave={() => setHoveredItem(null)}
-              className={`transition-all duration-300 cursor-pointer text-3xl ${
+              className={`transition-all duration-300 cursor-pointer text-3xl md:text-xl ${
                 hoveredItem === 'work' || hoveredItem === null
                   ? 'text-white'
                   : 'text-gray-400'
@@ -139,7 +139,7 @@ export default function Header({}: HeaderProps) {
               href="/services" 
               onMouseEnter={() => setHoveredItem('services')}
               onMouseLeave={() => setHoveredItem(null)}
-              className={`transition-all duration-300 cursor-pointer text-3xl ${
+              className={`transition-all duration-300 cursor-pointer text-3xl md:text-xl ${
                 hoveredItem === 'services' || hoveredItem === null
                   ? 'text-white'
                   : 'text-gray-400'
@@ -151,7 +151,7 @@ export default function Header({}: HeaderProps) {
               href="/about" 
               onMouseEnter={() => setHoveredItem('about')}
               onMouseLeave={() => setHoveredItem(null)}
-              className={`transition-all duration-300 cursor-pointer text-3xl ${
+              className={`transition-all duration-300 cursor-pointer text-3xl md:text-xl ${
                 hoveredItem === 'about' || hoveredItem === null
                   ? 'text-white'
                   : 'text-gray-400'
@@ -171,7 +171,7 @@ export default function Header({}: HeaderProps) {
               e.preventDefault();
               openCalendly();
             }}
-            className="hover:opacity-70 transition-all duration-300 cursor-pointer text-2xl text-white"
+            className="hover:opacity-70 transition-all duration-300 cursor-pointer text-2xl md:text-lg text-white"
           >
             Book a meeting
           </a>

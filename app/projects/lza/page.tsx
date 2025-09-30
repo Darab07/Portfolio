@@ -171,21 +171,31 @@ export default function StonexisProject() {
       <div ref={contentCardRef} className="content-card relative z-20 bg-white min-h-screen py-16 md:py-24 text-xl md:text-2xl">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="pl-6 md:pl-12">
-            <h1 ref={headingRef} className="text-4xl lg:text-6xl font-light text-black mb-1">
+            <h1 ref={headingRef} className="text-4xl lg:text-4xl font-light text-black mb-1">
             LZA Architecture
             </h1>
           </div>
 
           <div className="space-y-4 px-6 md:px-12 pb-2 md:pb-0">
-            <p className="text-sm md:text-2xl text-gray-600 leading-relaxed text-left">
+            <p className="text-sm md:text-lg text-gray-600 leading-relaxed text-left">
             LZA Architecture creates contemporary residences for clients who value timeless design over fleeting trends. Their work blends cultural heritage with clean, modern lines, resulting in spaces that feel grounded, refined, and quietly distinctive. Each project is envisioned with permanence and integrity in mind—built not to impress, but to endure.
             </p>
 
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-black rounded-full animate-blink"></div>
-              <a href="https://www.figma.com/design/HV4ZrDW4cgFXJfdngexyLc/LZA-Architecture?node-id=0-1&t=1fH6RZJzNcAAwufg-1" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">
-                View wireframes
-              </a>
+            <div className="space-y-3 mt-6">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-black rounded-full animate-blink"></div>
+                <a href="https://www.figma.com/design/HV4ZrDW4cgFXJfdngexyLc/LZA-Architecture?node-id=0-1&t=1fH6RZJzNcAAwufg-1" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">
+                  View wireframes
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <a href="/downloads/LZA presentation.pdf" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">
+                  Download report
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -222,7 +232,7 @@ export default function StonexisProject() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 min-h-screen">
             <div className="lg:sticky lg:top-8 lg:h-fit pt-8 md:pt-32 pb-8 md:pb-16 pl-2 md:pl-2">
-              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-2xl">
+              <h2 className="font-light text-black mb-8 leading-relaxed text-sm md:text-lg">
                 <span className="md:hidden">Our web design emphasized a refined, user-friendly layout that makes it effortless for visitors to explore projects, architectural philosophy, and case studies, while reflecting LZA’s commitment to timeless design.</span>
                 <span className="hidden md:block">
                 Our web design emphasized a refined, user-friendly layout that makes it effortless for visitors to explore projects, architectural philosophy, and case studies, while reflecting LZA’s commitment to timeless design.
@@ -257,21 +267,21 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="w-full px-6 md:px-12 py-12 md:py-24 text-xl md:text-2xl">
           <div className="max-w-2xl pl-0 md:pl-12 fade-up">
-            <h3 className="text-lg md:text-2xl font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
+            <h3 className="text-lg md:text-lg font-light text-gray-400 mb-2 tracking-wider uppercase border-b border-gray-200 pb-6 w-full">
               SERVICES
             </h3>
 
             <div className="space-y-2">
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Website Strategy, Consulting</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Website Strategy, Consulting</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">UX/UI, Web Design</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">UX/UI, Web Design</h4>
               </div>
 
               <div className="border-b border-gray-200 py-3 w-full">
-                <h4 className="font-light text-black text-lg md:text-2xl m-0">Brand Identity</h4>
+                <h4 className="font-light text-black text-lg md:text-lg m-0">Brand Identity</h4>
               </div>
             </div>
           </div>
@@ -295,7 +305,7 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24 text-xl md:text-5xl">
           <div className="w-full fade-up">
-            <h2 className="text-lg md:text-5xl lg:text-7xl font-light text-black leading-tight text-left">
+            <h2 className="text-lg md:text-3xl lg:text-5xl font-light text-black leading-tight text-left">
               <span className="md:hidden">The project was crafted to strengthen LZA Architecture’s digital presence by elevating their brand identity.
               It delivers a seamless and engaging experience for visitors, reflecting their design philosophy and reinforcing their reputation as leaders in contemporary architecture.</span>
               <span className="hidden md:block">
@@ -355,8 +365,8 @@ export default function StonexisProject() {
       <div className="relative z-20 bg-white">
         <div className="px-6 md:px-12 py-12 md:py-24">
           <div className="w-full">
-            <h2 className="text-xl lg:text-6xl font-light text-black leading-tight text-left">
-              <span className="lg:hidden">The visual identity was designed to highlight the brand’s character through elegant card mockups. It communicates clarity and sophistication, creating a memorable impression that builds trust and reinforces the brand’s position within its industry.</span>
+            <h2 className="text-xl lg:text-4xl font-light text-black leading-tight text-left">
+              <span className="lg:hidden">The visual identity was designed to highlight the brand's character through elegant card mockups. It communicates clarity and sophistication, creating a memorable impression that builds trust and reinforces the brand's position within its industry.</span>
               <span className="hidden lg:block">
               The visual identity was created
                 <br />
@@ -379,14 +389,14 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/lza/Mobile Mockup.png"
+                  src="/images/lza/Mobile Mockup.jpg"
                   alt="LZA Architecture mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/lza/Card Mockup.png"
+                  src="/images/lza/Card Mockup.jpg"
                   alt="LZA Architecture cards showing project portfolio"
                   className="w-full h-full object-cover"
                 />
@@ -402,9 +412,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Discovery</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">5 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Discovery</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">5 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I researched the industry landscape and analyzed the target audience to understand pain points and 
                   expectations. From these insights, I mapped out opportunities and shaped early concepts through 
                   brainstorming and quick wireframes.
@@ -415,9 +425,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Design</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">11 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Design</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">11 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I built high-fidelity wireframes and responsive layouts in Figma, focusing on clarity and usability. 
                   A component-based design system ensured visual consistency and flexibility across different screens 
                   and use cases.
@@ -428,9 +438,9 @@ export default function StonexisProject() {
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200"></div>
               <div className="pl-8 py-8">
-                <h3 className="font-light text-black mb-4 text-xl md:text-2xl">Branding & Visual Identity</h3>
-                <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">6 days</p>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="font-light text-black mb-4 text-xl md:text-lg">Branding & Visual Identity</h3>
+                <p className="text-base md:text-base text-gray-400 mb-6 md:mb-8">6 days</p>
+                <p className="text-gray-600 leading-relaxed text-base md:text-base">
                   I developed supporting visual assets such as mockups, refined typography, and a tailored color palette. 
                   These elements came together to form a cohesive identity that communicates professionalism and leaves 
                   a lasting impression.
@@ -468,7 +478,7 @@ export default function StonexisProject() {
         <div className="w-full px-6 md:px-12">
           {/* Full-width heading and divider */}
           <div className="max-w-4xl">
-              <h2 className="text-4xl md:text-6xl font-light leading-tight tracking-[-0.075em] text-black">
+              <h2 className="text-4xl md:text-4xl font-light leading-tight tracking-[-0.075em] text-black">
                 <span className="block md:hidden">
                   Take the next step
                   <br />
@@ -493,7 +503,7 @@ export default function StonexisProject() {
           {/* Two cards in the same row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-              <p className="text-black text-lg leading-relaxed mb-[60px]">
+              <p className="text-black text-lg md:text-base leading-relaxed mb-[60px]">
                   Book a time for a short call to discuss the possibilities of working together.
                 </p>
 
@@ -507,7 +517,7 @@ export default function StonexisProject() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
                     </div>
                   </div>
 
@@ -525,7 +535,7 @@ export default function StonexisProject() {
             </div>
 
             <div className="bg-white rounded-lg p-8 shadow-sm h-full min-h-[200px]">
-                <p className="text-lg leading-relaxed text-gray-500 mb-[60px]">Contact</p>
+                <p className="text-lg md:text-base leading-relaxed text-gray-500 mb-[60px]">Contact</p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -540,8 +550,8 @@ export default function StonexisProject() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium text-black">M. Darab Khan</h4>
-                      <p className="text-gray-500 text-sm">mdarabkhan02@gmail.com</p>
+                      <h4 className="font-medium text-black text-lg md:text-base">M. Darab Khan</h4>
+                      <p className="text-gray-500 text-sm md:text-xs">mdarabkhan02@gmail.com</p>
                   </div>
                 </div>
               </div>
