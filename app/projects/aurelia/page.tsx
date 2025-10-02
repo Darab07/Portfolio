@@ -161,7 +161,7 @@ export default function StonexisProject() {
       <div
         className="hero-bg fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed md:bg-fixed bg-scroll"
         style={{
-          backgroundImage: "url('/images/aurelia/Laptop.png')",
+          backgroundImage: "url('/images/aurelia/Laptop.jpg')",
         }}
       />
 
@@ -432,7 +432,7 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/aurelia/Phone Mockup.jpg"
+                  src="/images/aurelia/Iphone Pockup.jpg"
                   alt="Stonexis mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />

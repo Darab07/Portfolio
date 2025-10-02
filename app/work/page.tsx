@@ -4,6 +4,9 @@ import { useRef, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import Script from "next/script"
 import Header from "@/components/Header"
+import LoadingScreen from "@/components/LoadingScreen"
+import ProjectLoadingScreen from "@/components/ProjectLoadingScreen"
+import { useProjectNavigation } from "@/hooks/useProjectNavigation"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -13,6 +16,14 @@ export default function Work() {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false)
   const [activeFilter, setActiveFilter] = useState('all')
   const workTitleRef = useRef<HTMLHeadingElement>(null)
+  
+  // New project navigation system
+  const { 
+    isNavigating, 
+    progress: navProgress, 
+    targetProject, 
+    navigateToProject 
+  } = useProjectNavigation()
   const projectsRef = useRef<HTMLDivElement>(null)
 
   const openCalendly = () => {
@@ -24,45 +35,50 @@ export default function Work() {
     }
   }
 
+  const handleProjectClick = (projectId: string) => {
+    navigateToProject(projectId)
+  }
+
+
   const projects = [
     {
       id: 'stonexis',
       title: 'Stonexis',
       category: 'web-design',
-      image: '/images/StonexisLaptopMockup.webp',
-      hoverImage: '/images/Stonexis2.webp',
+      image: '/images/stonexis/Laptop.jpg',
+      hoverImage: '/images/stonexis/Cards.jpg',
       tags: ['Web design', 'Development']
     },
     {
       id: 'aurelia',
       title: 'Aurelia Hotel',
       category: 'brand-identity',
-      image: '/images/AureliaLaptopMockup.webp',
-      hoverImage: '/images/Aurelia2.webp',
+      image: '/images/aurelia/Laptop.jpg',
+      hoverImage: '/images/aurelia/Phone Frames.png',
       tags: ['Branding', 'Web design']
     },
     {
       id: 'nexora',
       title: 'Nexora',
       category: 'brand-identity',
-      image: '/images/NexoraLaptopMockup.webp',
-      hoverImage: '/images/Nexora2.webp',
+      image: '/images/nexora/Laptop Mockup.jpg',
+      hoverImage: '/images/nexora/Journals Page.png',
       tags: ['Branding', 'Strategy']
     },
     {
       id: 'lza',
       title: 'LZA Architecture',
       category: 'development',
-      image: '/images/LZALaptopMockup.webp',
-      hoverImage: '/images/LZA2.webp',
+      image: '/images/lza/Laptop Mockup.jpg',
+      hoverImage: '/images/lza/Card Mockup.jpg',
       tags: ['Development', 'UI/UX']
     },
     {
       id: 'kickflips',
       title: 'KickFlips',
       category: 'e-commerce',
-      image: '/images/KickFlipsLaptopMockup.webp',
-      hoverImage: '/images/Kickflips2.webp',
+      image: '/images/kickflips/Laptop Mockup.jpg',
+      hoverImage: '/images/kickflips/Card Mockup.jpg',
       tags: ['E-commerce', 'Branding']
     }
   ]
@@ -111,6 +127,13 @@ export default function Work() {
 
   return (
     <>
+      {/* Project Navigation Loading Screen */}
+      <ProjectLoadingScreen 
+        isVisible={isNavigating}
+        progress={navProgress}
+        projectName={targetProject ? targetProject.charAt(0).toUpperCase() + targetProject.slice(1) : undefined}
+      />
+      
       <style jsx global>{`
         body {
           overflow-x: hidden !important;
@@ -167,8 +190,8 @@ export default function Work() {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="relative bg-gray-200 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-                onClick={() => router.push(`/projects/${project.id}`)}
+                className="relative bg-gray-200 rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+                onClick={() => handleProjectClick(project.id)}
               >
                 <Image
                   src={project.image}

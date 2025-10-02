@@ -28,7 +28,7 @@ export default function StonexisProject() {
 
     // Preload all images for the page
     const imageUrls = [
-      '/images/Stonexis Laptop Mockup High.webp',
+      '/images/stonexis/Laptop.jpg',
       '/images/stonexis/Screenshot 2025-09-19 162048.png',
       '/images/stonexis/Landing Page.png',
       '/images/stonexis/Quote.png',
@@ -184,7 +184,7 @@ export default function StonexisProject() {
       <div
         className="hero-bg fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed md:bg-fixed bg-scroll"
         style={{
-          backgroundImage: "url('/images/Stonexis Laptop Mockup High.webp')",
+          backgroundImage: "url('/images/stonexis/Laptop.jpg')",
         }}
       />
 
@@ -462,14 +462,14 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/stonexis/Phone Mockup High.png"
+                  src="/images/stonexis/Phone Mockup.jpg"
                   alt="Stonexis mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/stonexis/Cards.png"
+                  src="/images/stonexis/Cards.jpg"
                   alt="Stonexis cards showing project portfolio"
                   className="w-full h-full object-cover"
                 />

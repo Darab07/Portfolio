@@ -161,7 +161,7 @@ export default function StonexisProject() {
       <div
         className="hero-bg fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed md:bg-fixed bg-scroll"
         style={{
-          backgroundImage: "url('/images/nexora/Laptop Mockup.png')",
+          backgroundImage: "url('/images/nexora/Laptop Mockup.jpg')",
         }}
       />
 
@@ -422,14 +422,14 @@ export default function StonexisProject() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/nexora/Iphone Mockup.png"
+                  src="/images/nexora/Iphone Mockup.jpg"
                   alt="Nexora mobile mockup showing responsive design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
                 <img
-                  src="/images/nexora/Card Mockup.png"  
+                  src="/images/nexora/Card Mockup.jpg"  
                   alt="Nexora card mockup showing project portfolio"
                   className="w-full h-full object-cover"
                 />

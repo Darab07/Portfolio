@@ -6,6 +6,10 @@ import { useRef, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import Script from "next/script"
 import Header from "@/components/Header"
+import LoadingScreen from "@/components/LoadingScreen"
+import ProjectLoadingScreen from "@/components/ProjectLoadingScreen"
+import { useLoading } from "@/hooks/useLoading"
+import { useProjectNavigation } from "@/hooks/useProjectNavigation"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -26,6 +30,23 @@ export default function Home() {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false)
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const [isRoleAnimating, setIsRoleAnimating] = useState(false)
+  const { isLoading, progress, setLoading } = useLoading({
+    autoIncrement: false,
+    initialProgress: 0
+  })
+  const [loadingProgress, setLoadingProgress] = useState(0)
+  
+  // New project navigation system
+  const { 
+    isNavigating, 
+    progress: navProgress, 
+    targetProject, 
+    navigateToProject 
+  } = useProjectNavigation()
+
+  const roles = ["UI/UX Designer", "Coder", "Problem Solver", "Visionary"]
 
   const openCalendly = () => {
     if (typeof window !== 'undefined' && (window as any).Calendly) {
@@ -35,6 +56,11 @@ export default function Home() {
       window.open('https://calendly.com/mdarabkhan02/new-meeting', '_blank');
     }
   }
+
+  const handleProjectClick = (projectId: string) => {
+    navigateToProject(projectId)
+  }
+
   const koderusHeadingRef = useRef<HTMLHeadingElement>(null)
   const wideWingsHeadingRef = useRef<HTMLHeadingElement>(null)
   const extricaHeadingRef = useRef<HTMLHeadingElement>(null)
@@ -46,29 +72,29 @@ export default function Home() {
     {
       id: 1,
       number: "01.",
-      title: "Brief us",
-      description: "Provide your project details for us to better align our web design, development, and brand identity design services with your needs.",
+      title: "About Me",
+      description: "Get a quick overview of who I am, my background, and the passion that drives my work in web design, development, and brand identity.",
       hasButton: true
     },
     {
       id: 2,
       number: "02.",
-      title: "Meet us online",
-      description: "Share your project information so we can accurately adjust our web design and development services to suit your requirements.",
+      title: "My Approach",
+      description: "See how I tackle projects step by step — from research and planning to design and development — ensuring thoughtful and impactful results.",
       hasButton: false
     },
     {
       id: 3,
       number: "03.",
-      title: "Free estimation",
-      description: "Receive a detailed estimate from us, designed to provide a clear overview of the costs tailored to your project's unique requirements.",
+      title: "Experience & Skills",
+      description: "Explore the skills, tools, and experiences I bring to every project, giving you a clear picture of how I can contribute effectively.",
       hasButton: false
     },
     {
       id: 4,
       number: "04.",
-      title: "Work together",
-      description: "Collaborate closely with us to efficiently and effectively turn your project vision into reality, ensuring comprehensive success.",
+      title: "Projects & Impact",
+      description: "Dive into selected works that highlight my design thinking, technical skills, and creative solutions across different domains.",
       hasButton: false
     }
   ]
@@ -101,6 +127,78 @@ export default function Home() {
     if (videoRef.current) {
       videoRef.current.play().catch(console.error)
     }
+
+    // Track real loading progress
+    const trackLoadingProgress = () => {
+      const images = document.querySelectorAll('img')
+      const videos = document.querySelectorAll('video')
+      const totalMedia = images.length + videos.length
+      
+      if (totalMedia === 0) {
+        // No media to wait for, complete quickly
+        setLoadingProgress(100)
+        setTimeout(() => setLoading(false), 500)
+        return
+      }
+      
+      let loadedCount = 0
+      let currentProgress = 0
+      
+      const updateProgress = () => {
+        loadedCount++
+        currentProgress = Math.round((loadedCount / totalMedia) * 100)
+        setLoadingProgress(currentProgress)
+        
+        if (loadedCount >= totalMedia) {
+          // All media loaded, complete loading
+          setTimeout(() => setLoading(false), 300)
+        }
+      }
+      
+      // Track image loading
+      images.forEach((img, index) => {
+        if (img.complete) {
+          updateProgress()
+        } else {
+          img.onload = updateProgress
+          img.onerror = updateProgress
+        }
+      })
+      
+      // Track video loading
+      videos.forEach((video, index) => {
+        if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+          updateProgress()
+        } else {
+          video.oncanplay = updateProgress
+          video.onerror = updateProgress
+        }
+      })
+      
+      // Fallback timeout in case some media doesn't load
+      setTimeout(() => {
+        if (currentProgress < 100) {
+          setLoadingProgress(100)
+          setTimeout(() => setLoading(false), 300)
+        }
+      }, 8000)
+    }
+    
+    // Start tracking after a short delay to allow DOM to render
+    const trackTimer = setTimeout(trackLoadingProgress, 300)
+    
+    return () => clearTimeout(trackTimer)
+
+    // Role cycling animation with slide effect
+    const roleInterval = setInterval(() => {
+      setIsRoleAnimating(true)
+      setTimeout(() => {
+        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length)
+        setIsRoleAnimating(false) // Immediately start slide in
+      }, 800) // Slide out duration
+    }, 2600) // Total cycle: 0.8s slide out + 1s visible + 0.8s slide in
+
+    return () => clearInterval(roleInterval)
 
     if (headlineRef.current) {
       gsap.fromTo(
@@ -302,12 +400,56 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <LoadingScreen 
+        progress={loadingProgress} 
+        isVisible={isLoading} 
+        onComplete={() => setLoading(false)} 
+      />
+      
+      {/* Project Navigation Loading Screen */}
+      <ProjectLoadingScreen 
+        isVisible={isNavigating}
+        progress={navProgress}
+        projectName={targetProject ? targetProject.charAt(0).toUpperCase() + targetProject.slice(1) : undefined}
+      />
+      
       <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       <Script 
         src="https://assets.calendly.com/assets/external/widget.js" 
         strategy="lazyOnload"
         onLoad={() => setCalendlyLoaded(true)}
       />
+      <style jsx>{`
+        @keyframes slideInFromBottom {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes slideOutToTop {
+          0% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+        }
+        
+        .role-slide-in {
+          animation: slideInFromBottom 0.8s ease-out forwards;
+        }
+        
+        .role-slide-out {
+          animation: slideOutToTop 0.8s ease-out forwards;
+        }
+      `}</style>
       <section className="fixed top-0 left-0 w-full h-screen overflow-hidden z-0 max-w-full">
         <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline>
           <source src="/images/Background-Animation.mp4" type="video/mp4" />
@@ -322,9 +464,9 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white max-w-4xl px-12">
             <h1 ref={headlineRef} className="text-3xl md:text-4xl font-light leading-tight mb-12 tracking-[-0.075em]">
-            <span className="inline-block">Branding and web design,</span>
+            <span className="inline-block">Turning ideas into impact</span>
             <br />
-            <span className="inline-block">driven by strategy & innovation.</span>
+            <span className="inline-block transition-all duration-300 ease-in-out">as a <span className={`inline-block ${isRoleAnimating ? 'role-slide-out' : 'role-slide-in'}`}>{roles[currentRoleIndex]}</span></span>
           </h1>
             <p className="text-lg md:text-lg font-light mb-8 text-gray-200">
               Mohammad Darab Khan
@@ -367,8 +509,8 @@ export default function Home() {
         
         <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
-            className="relative bg-gray-200 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-            onClick={() => router.push("/projects/stonexis")}
+            className="relative bg-gray-200 rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+            onClick={() => handleProjectClick("stonexis")}
           >
             <Image
               src="/images/stonexis/Laptop.jpg"
@@ -405,8 +547,8 @@ export default function Home() {
           </div>
 
           <div 
-            className="relative bg-black rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-            onClick={() => router.push("/projects/aurelia")}
+            className="relative bg-black rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+            onClick={() => handleProjectClick("aurelia")}
           >
             <Image
               src="/images/aurelia/Laptop.jpg"
@@ -442,8 +584,8 @@ export default function Home() {
           </div>
 
           <div 
-            className="relative bg-green-800 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-            onClick={() => router.push("/projects/nexora")}
+            className="relative bg-green-800 rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+            onClick={() => handleProjectClick("nexora")}
           >
             <Image
               src="/images/nexora/Laptop Mockup.jpg"
@@ -479,8 +621,8 @@ export default function Home() {
           </div>
 
           <div 
-            className="relative bg-blue-900 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-            onClick={() => router.push("/projects/lza")}
+            className="relative bg-blue-900 rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+            onClick={() => handleProjectClick("lza")}
           >
             <Image
               src="/images/lza/Laptop Mockup.jpg"
@@ -516,8 +658,8 @@ export default function Home() {
           </div>
 
           <div 
-            className="relative bg-purple-900 rounded-lg overflow-hidden h-[600px] md:h-[1000px] cursor-pointer"
-            onClick={() => router.push("/projects/kickflips")}
+            className="relative bg-purple-900 rounded-lg overflow-hidden h-[600px] md:h-[700px] cursor-pointer"
+            onClick={() => handleProjectClick("kickflips")}
           >
             <Image
               src="/images/kickflips/Laptop Mockup.jpg"
@@ -558,16 +700,16 @@ export default function Home() {
         <div className="w-full px-6 md:px-12">
           <h2 ref={foundationRef} className="font-light leading-tight tracking-[-0.075em] text-black mb-16 text-4xl md:text-5xl">
             <span className="block md:hidden">
-              Setting the
+            Crafting Work 
               <br />
-              Foundation for your
+              That Speaks 
               <br />
-              project success
+              for Itself
             </span>
             <span className="hidden md:block">
-              Setting the foundation for
+              Crafting Work That 
               <br />
-              your project success.
+              Speaks for Itself
             </span>
           </h2>
 
@@ -576,10 +718,9 @@ export default function Home() {
             {/* Step 01 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">01.</div>
-              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Brief me</h3>
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">About Me</h3>
               <p className="text-gray-600 text-base md:text-sm leading-relaxed mb-8">
-                Provide your project details for me to better align my web design, development, and brand identity
-                design services with your needs.
+                Get a quick overview of who I am, my background, and the passion that drives my work in web design, development, and brand identity.
               </p>
               <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -591,30 +732,27 @@ export default function Home() {
             {/* Step 02 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">02.</div>
-              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Meet me online</h3>
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">My Approach</h3>
               <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                Share your project information so I can accurately adjust my web design and development services to
-                suit your requirements.
+                See how I tackle projects step by step — from research and planning to design and development — ensuring thoughtful and impactful results.
               </p>
             </div>
 
             {/* Step 03 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">03.</div>
-              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Free estimation</h3>
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Experience & Skills</h3>
               <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                Receive a detailed estimate from me, designed to provide a clear overview of the costs tailored to your   
-                project's unique requirements.
+                Explore the skills, tools, and experiences I bring to every project, giving you a clear picture of how I can contribute effectively.
               </p>
             </div>
 
             {/* Step 04 */}
             <div className="border-l border-gray-200 pl-8">
               <div className="text-gray-400 text-sm font-medium mb-4">04.</div>
-              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Work together</h3>
+              <h3 className="text-2xl md:text-xl font-light text-black mb-6">Projects & Impact</h3>
               <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                Collaborate closely with me to efficiently and effectively turn your project vision into reality,
-                ensuring comprehensive success.
+                Dive into selected works that highlight my design thinking, technical skills, and creative solutions across different domains.
               </p>
             </div>
           </div>
@@ -788,18 +926,15 @@ export default function Home() {
             {/* Right side - Description paragraphs */}
             <div className="md:w-1/2 space-y-8 mt-12 md:mt-8">
               <p className="text-white text-lg md:text-base leading-relaxed">
-                Gain a competitive edge, enhance your brand perception, and achieve brand clarity.
+              Blending creativity, strategy, and technical precision.
               </p>
 
               <p className="text-lg md:text-base leading-relaxed text-gray-500">
-                Your identity drives change, increases the value of your company, and contributes to your organization
-                to move faster and more efficiently.
+              Design and development come together to create experiences that are intuitive, functional, and engaging. Every project is a chance to solve problems, explore ideas, and push boundaries through thoughtful execution.
               </p>
 
               <p className="text-lg md:text-base leading-relaxed text-gray-500">
-                A professional corporate identity attracts the attention of potential customers and makes your business
-                a preferred choice. A well-defined and consistent brand conveys professionalism, and positively impacts
-                customer loyalty and influences premium-brand perception.
+              Consistency and professionalism are the foundation of meaningful work. By combining design thinking with technical skill, I focus on creating results that connect with people, deliver value, and leave a lasting impression.
               </p>
 
               <div className="mt-12">
@@ -853,14 +988,15 @@ export default function Home() {
             {/* Right side - Description paragraphs */}
             <div className="md:w-1/2 space-y-8 mt-12 md:mt-8">
               <p className="text-black text-lg md:text-base leading-relaxed">
-                Generate leads & engagement, showcase expertise and credability, and stand out & differentiate.
+                Generate engagement, build credibility, and stand out with impact.
               </p>
 
               <p className="text-lg md:text-base leading-relaxed text-gray-500">
-                Your website should enable easy access to inform, maintain trustworthiness and move buyers towards the
-                sale. A high-quality website can help you engage with your visitors, encouraging them to learn more
-                about your business and take action. A modern and beautiful digital presence can be a clear
-                differentiator and create a memorable first impression.
+                A strong digital presence should inform clearly, maintain trust, and guide people toward meaningful action. When designed thoughtfully, a website becomes more than just a page — it becomes a space where ideas connect with people.
+              </p>
+
+              <p className="text-lg md:text-base leading-relaxed text-gray-500">
+                Modern, purposeful design creates a memorable first impression. By blending clarity with creativity, a digital experience can capture attention, strengthen trust, and leave a lasting mark.
               </p>
 
               <div className="mt-12">

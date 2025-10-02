@@ -28,26 +28,26 @@ export default function About() {
   const foundationCards = [
     {
       number: "01.",
-      title: "Brief us",
-      description: "Provide your project details for us to better align our web design, development, and brand identity design services with your needs.",
+      title: "About Me",
+      description: "Get a quick overview of who I am, my background, and the passion that drives my work in web design, development, and brand identity.",
       hasButton: true
     },
     {
       number: "02.",
-      title: "Meet us online",
-      description: "Share your project information so we can accurately adjust our web design and development services to suit your requirements.",
+      title: "My Approach",
+      description: "See how I tackle projects step by step — from research and planning to design and development — ensuring thoughtful and impactful results.",
       hasButton: false
     },
     {
       number: "03.",
-      title: "Free estimation",
-      description: "Receive a detailed estimate from us, designed to provide a clear overview of the costs tailored to your project's unique requirements.",
+      title: "Experience & Skills",
+      description: "Explore the skills, tools, and experiences I bring to every project, giving you a clear picture of how I can contribute effectively.",
       hasButton: false
     },
     {
       number: "04.",
-      title: "Work together",
-      description: "Collaborate closely with us to efficiently and effectively turn your project vision into reality, ensuring comprehensive success.",
+      title: "Projects & Impact",
+      description: "Dive into selected works that highlight my design thinking, technical skills, and creative solutions across different domains.",
       hasButton: false
     }
   ]
@@ -81,40 +81,40 @@ export default function About() {
 
   const faqData = [
     {
-      question: "What do you require before starting a project?",
-      answer: "I usually require a clear project brief and a starting deposit before beginning work. This ensures both alignment and commitment from the very start."
+      question: "What do you bring to a team or project?",
+      answer: "I bring a balance of creativity, technical skill, and problem-solving. I enjoy working collaboratively, contributing ideas, and ensuring that projects are both visually compelling and technically sound."
     },
     {
-      question: "What is included in a round of revision?",
-      answer: "Each project typically includes up to 3 rounds of revisions per phase. Extra revisions can be added if needed, though they may take additional time and cost."
+      question: "How do you approach feedback and iteration?",
+      answer: "I see feedback as an essential part of growth. My approach is to listen actively, understand the reasoning behind feedback, and adapt quickly while maintaining the project's core vision."
     },
     {
-      question: "What is the price?",
-      answer: "Pricing depends on the scope and complexity of your project. Since no two projects are alike, I'll provide a tailored quote after understanding your requirements. I'm flexible with payment terms and can adjust to fit different budgets."
+      question: "What are your salary or compensation expectations?",
+      answer: "I am flexible and open to discussion, with expectations aligned to the role, responsibilities, and industry standards. My focus is on finding the right environment to learn, contribute, and grow."
     },
     {
-      question: "How long will it take to complete the project?",
-      answer: "Timelines vary by project, but most take between 4–9 weeks. If you have a deadline in mind, let me know — I'll do my best to accommodate."
+      question: "How quickly can you adapt to a new role or project?",
+      answer: "I adapt quickly by immersing myself in the tools, workflows, and expectations of the role. I'm proactive in asking questions, learning from teammates, and taking initiative to get up to speed fast."
     },
     {
-      question: "Can we edit the website when it's done?",
-      answer: "Yes! I design websites that are easy to manage. With platforms like Webflow or WordPress, you'll be able to edit content yourself without needing to code."
+      question: "Are you comfortable working with existing systems and tools?",
+      answer: "Yes, I can work effectively with existing systems while also identifying areas for improvement. I'm comfortable learning new tools and integrating into established workflows."
     },
     {
-      question: "Do you design and build websites?",
-      answer: "Yes, I handle both design and development. From UI/UX design and wireframes to full builds, I make sure your site is responsive, optimized for SEO, and user-friendly. I also create no-code solutions in Webflow when needed."
+      question: "Do you specialize in both design and development?",
+      answer: "Yes, my work spans both. I specialize in designing user-friendly interfaces and translating them into functional, responsive websites. This positions me uniquely at the intersection of design and technology."
     },
     {
-      question: "What is the process?",
-      answer: "My process starts with discovery and research to fully understand your brand and users. From there, I create moodboards and wireframes, then move into design and implementation — always keeping you involved along the way."
+      question: "What is your typical workflow or process?",
+      answer: "I usually begin with research and planning, move into wireframes and design, then shift to development and implementation. I test, refine, and iterate until the final product aligns with expectations."
     },
     {
-      question: "What exactly do you do?",
-      answer: "I design digital identities and create websites. My work ranges from branding and UI/UX design to interactive, responsive web experiences tailored to your goals."
+      question: "What skills and expertise do you offer?",
+      answer: "I offer expertise in UI/UX design, web development, and brand identity. My technical skills include coding and building responsive websites, while my creative side focuses on design thinking, problem-solving, and storytelling through visuals."
     },
     {
-      question: "I'm interested in collaboration. Where do I start?",
-      answer: "Great! Just reach out with a short overview of your project through my contact page or email me directly at mdarabkhan02@gmail.com. I'll get back to you quickly to discuss details and next steps."
+      question: "I'm interested in your work — how can we connect?",
+      answer: "You can reach me directly through email or LinkedIn. I'm open to conversations about roles, collaborations, and opportunities to contribute my skills to meaningful projects."
     }
   ]
 
@@ -466,8 +466,20 @@ export default function About() {
           <div className="w-full px-6 md:px-12">
             {/* Mobile Layout */}
             <div className="block md:hidden space-y-8">
-              <h3 className="text-4xl md:text-2xl md:text-xl font-light text-black mb-6">FAQs:</h3>
-              <p className="text-4xl md:text-2xl text-gray-500 mb-8">Common design questions</p>
+              <h2 className="font-light leading-tight tracking-[-0.075em] text-black mb-16 text-4xl md:text-5xl">
+                <span className="block md:hidden">
+                  FAQs:
+                  <br />
+                  Common design
+                  <br />
+                  questions
+                </span>
+                <span className="hidden md:block">
+                  FAQs:
+                  <br />
+                  Common design questions
+                </span>
+              </h2>
               
               <div className="space-y-0 mt-16">
                 {faqData.map((faq, index) => (
@@ -604,7 +616,7 @@ export default function About() {
                         key={index}
                         onClick={() => goToCard(index)}
                         disabled={isAnimating}
-                        className={`w-3 h-3 rounded-full transition-colors ${
+                        className={`w-3 h-6 rounded-full transition-colors ${
                           index === currentCardIndex 
                             ? 'bg-black' 
                             : 'bg-gray-300 hover:bg-gray-400'
@@ -631,10 +643,9 @@ export default function About() {
               {/* Step 01 */}
               <div className="border-l border-gray-200 pl-8">
                 <div className="text-gray-400 text-sm font-medium mb-4">01.</div>
-                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Brief us</h3>
+                <h3 className="text-2xl md:text-xl font-light text-black mb-6">About Me</h3>
                 <p className="text-gray-600 text-base md:text-sm leading-relaxed mb-8">
-                  Provide your project details for us to better align our web design, development, and brand identity
-                  design services with your needs.
+                  Get a quick overview of who I am, my background, and the passion that drives my work in web design, development, and brand identity.
                 </p>
                 <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -646,30 +657,27 @@ export default function About() {
               {/* Step 02 */}
               <div className="border-l border-gray-200 pl-8">
                 <div className="text-gray-400 text-sm font-medium mb-4">02.</div>
-                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Meet us online</h3>
+                <h3 className="text-2xl md:text-xl font-light text-black mb-6">My Approach</h3>
                 <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                  Share your project information so we can accurately adjust our web design and development services to
-                  suit your requirements.
+                  See how I tackle projects step by step — from research and planning to design and development — ensuring thoughtful and impactful results.
                 </p>
               </div>
 
               {/* Step 03 */}
               <div className="border-l border-gray-200 pl-8">
                 <div className="text-gray-400 text-sm font-medium mb-4">03.</div>
-                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Free estimation</h3>
+                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Experience & Skills</h3>
                 <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                  Receive a detailed estimate from us, designed to provide a clear overview of the costs tailored to your
-                  project's unique requirements.
+                  Explore the skills, tools, and experiences I bring to every project, giving you a clear picture of how I can contribute effectively.
                 </p>
               </div>
 
               {/* Step 04 */}
               <div className="border-l border-gray-200 pl-8">
                 <div className="text-gray-400 text-sm font-medium mb-4">04.</div>
-                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Work together</h3>
+                <h3 className="text-2xl md:text-xl font-light text-black mb-6">Projects & Impact</h3>
                 <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-                  Collaborate closely with us to efficiently and effectively turn your project vision into reality,
-                  ensuring comprehensive success.
+                  Dive into selected works that highlight my design thinking, technical skills, and creative solutions across different domains.
                 </p>
               </div>
             </div>
