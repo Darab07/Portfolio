@@ -369,7 +369,7 @@ export default function StonexisProject() {
             </div>
             <div className="w-full p-8" style={{ backgroundColor: "#6b7280" }}>
         <img
-            src="/images/stonexis/Product Page.png"
+          src="/images/stonexis/Product Page.png"
           alt="Stonexis 2in1 facade system page showing product specifications, texture selection, and technical details"
                 className="w-full h-auto rounded-lg shadow-lg"
         />
