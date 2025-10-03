@@ -186,8 +186,6 @@ export default function Home() {
     
     // Start tracking after a short delay to allow DOM to render
     const trackTimer = setTimeout(trackLoadingProgress, 300)
-    
-    return () => clearTimeout(trackTimer)
 
     // Role cycling animation with slide effect
     const roleInterval = setInterval(() => {
@@ -198,7 +196,19 @@ export default function Home() {
       }, 800) // Slide out duration
     }, 2600) // Total cycle: 0.8s slide out + 1s visible + 0.8s slide in
 
-    return () => clearInterval(roleInterval)
+    // Start the first animation after a short delay
+    setTimeout(() => {
+      setIsRoleAnimating(true)
+      setTimeout(() => {
+        setCurrentRoleIndex(1) // Go to second role
+        setIsRoleAnimating(false)
+      }, 800)
+    }, 2000) // Start after 2 seconds
+    
+    return () => {
+      clearTimeout(trackTimer)
+      clearInterval(roleInterval)
+    }
 
     if (headlineRef.current) {
       gsap.fromTo(
